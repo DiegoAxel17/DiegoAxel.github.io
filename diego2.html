@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <enlace rel="preconectar" href="https://fonts.googleapis.com">
+    <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
+    <enlace href="https: //fonts.googleapis.com/css2? family= Oswald:wght@300 & display=swap" rel="stylesheet">
+    <title>Diego</title>
+    <style>
+    
+      h1{
+        text-align: center;
+      }
+      .derecha{
+        width: 300px;
+        float: right;
+      }
+      .izq{
+        width: 200px;
+        float: left;
+      }
+      p,
+      h4,
+      h3{
+        color: beige;
+        font-family: 'Oswald', sans-serif;
+      }
+      body{
+        
+        background-color: #ffffff;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <h1><strong>Linkin park</strong></h1>
+    <main>
+        <h4>info</h4>
+        
+        
+        <p style="text-align:left;">
+          <img src="https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/2.jpg?raw=true"  class="derecha" >
+          Linkin Park es una banda estadounidense de rock alternativo procedente de Agoura Hills, California formada en 1996. Integrada por Mike Shinoda, Dave Farrell, Joe Hahn, Brad Delson, Rob Bourdon y Chester Bennington, este último como voz principal. La banda comenzó con sus primeros trabajos musicales de manera independiente, en la que grabaron su primer material, llamado Xero; sin embargo, no tuvieron éxito en la búsqueda de un sello discográfico, ya que nadie mostraba interés por su trabajo. No fue hasta 1999, que con el apoyo de Jeff Blue, quien ejercía como vicepresidente de Warner Records, lograron firmar su primer contrato. El nombre proviene de un juego de palabras que hace referencia al Lincoln Park en Santa Mónica.
+        </p>
+        <button onclick="cambiarColor()">Cambiar Color</button>
+        <p id="texto">Hola</p>
+        <button onclick="cambiarTexto()">Cambiar texto</button>
+        <br>
+        <img id="imagen" src="https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/2.jpg?raw=true" alt="Imagen original">
+        <br>
+        <button onclick="cambiarImagen('https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/1.jpg?raw=true')">Cambiar imagen</button>
+        <button onclick="restaurarImagen()">Restaurar imagen</button>
+        <br>
+        <h2 id="mensaje">Hola mundo</h2>
+        <button onclick="ocultarMensaje()">Ocultar mensaje</button>
+        <br>
+        <div id="miDiv"></div>
+        <button onclick="escribirTexto()">Escribir mensaje</button>
+
+    <script>
+        function cambiarColor() {
+            var body = document.getElementsByTagName("body")[0];
+            var color = generarColorAleatorio();
+            body.style.backgroundColor = color;
+        }
+
+        function generarColorAleatorio() {
+            var letras = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+        
+        var nuevoTexto = "Hola que hace(texto predefinido)";
+        
+        function cambiarTexto() {
+          var elemento = document.getElementById("texto");
+          elemento.textContent = nuevoTexto;
+        }
+        
+        var imagenOriginal = "https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/2.jpg?raw=true";
+        var imagenNueva = "https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/1.jpg?raw=true";
+        var elementoImagen = document.getElementById("imagen");
+
+        function cambiarImagen(nuevaImagen) {
+          elementoImagen.src = nuevaImagen;
+        }
+
+        function restaurarImagen() {
+          elementoImagen.src = imagenOriginal;
+        }
+
+        function ocultarMensaje() {
+          var elementoMensaje = document.getElementById("mensaje");
+          elementoMensaje.style.display = "none";
+        }
+
+        function escribirTexto() {
+          var miDiv = document.getElementById("miDiv");
+          miDiv.innerHTML = "<h1>Este texto no lo escribió Diego Axel, lo escribió JavaScript</h1>";
+        }
+
+    </script>
+    
+
+       
+          
+      </main>
+      <footer>
+        <p>Diego Axel Estrada Ayala</p>
+      </footer>
+  </body>
+</html>
