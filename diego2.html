@@ -26,7 +26,7 @@
       }
       body{
         
-        background-color: #ffffff;
+        background-color:aqua;
         
       }
     </style>
@@ -73,11 +73,20 @@
         }
         
         
-        var nuevoTexto = "Hola que hace(texto predefinido)";
+       
+        
         
         function cambiarTexto() {
           var elemento = document.getElementById("texto");
-          elemento.textContent = nuevoTexto;
+          var nuevoTexto = "Hola que hace(texto predefinido)";
+          var texto2="Hola";
+          
+
+          if(elemento.textContent===nuevoTexto){
+            elemento.textContent=texto2;
+          }else{
+            elemento.textContent = nuevoTexto;
+          }
         }
         
         var imagenOriginal = "https://github.com/DiegoAxel17/examenU1_Estrada_Ayala_Diego_Axel/blob/main/imagenes/2.jpg?raw=true";
