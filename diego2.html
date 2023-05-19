@@ -29,6 +29,10 @@
         background-color:aqua;
         
       }
+      #image {
+        max-width: 400px;
+        max-height: 400px;
+      }
     </style>
   </head>
   <body>
@@ -55,6 +59,11 @@
         <br>
         <div id="miDiv"></div>
         <button onclick="escribirTexto()">Escribir mensaje</button>
+        <br>
+        <img id="image" src="" alt="Imagen">
+
+        <button id="anterior">Anterior</button>
+        <button id="siguiente">Siguiente</button>
 
     <script>
         function cambiarColor() {
@@ -110,6 +119,44 @@
           var miDiv = document.getElementById("miDiv");
           miDiv.innerHTML = "<h1>Este texto no lo escribió Diego Axel, lo escribió JavaScript</h1>";
         }
+        var imagenes = [
+          "https://github.com/DiegoAxel17/DiegoAxel.github.io/blob/main/img/primer.jpg?raw=true",
+          "https://github.com/DiegoAxel17/DiegoAxel.github.io/blob/main/img/segundo.jpg?raw=true",
+          "https://github.com/DiegoAxel17/DiegoAxel.github.io/blob/main/img/tres.jpg?raw=true",
+          "https://github.com/DiegoAxel17/DiegoAxel.github.io/blob/main/img/cuatro.jpg?raw=true",
+          "https://github.com/DiegoAxel17/DiegoAxel.github.io/blob/main/img/cinco.jpg?raw=true"
+        ];
+
+        var index = 0;
+        var imageElement = document.getElementById("image");
+        var anteriorButton = document.getElementById("anterior");
+        var siguienteButton = document.getElementById("siguiente");
+
+        function mostrarImagen() {
+          imageElement.src = imagenes[index];
+        }
+
+        function siguienteImagen() {
+          index++;
+          if (index >= imagenes.length) {
+            index = 0;
+          }
+          mostrarImagen();
+        }
+
+        function anteriorImagen() {
+          index--;
+          if (index < 0) {
+            index = imagenes.length - 1;
+          }
+          mostrarImagen();
+        }
+
+        siguienteButton.addEventListener("click", siguienteImagen);
+        anteriorButton.addEventListener("click", anteriorImagen);
+
+        // Mostrar la primera imagen al cargar la página
+        mostrarImagen();
 
     </script>
     
